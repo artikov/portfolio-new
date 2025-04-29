@@ -1,0 +1,1 @@
+export const capabilities = ['HTML', 'CSS', 'JavaScript', 'React', 'Figma']

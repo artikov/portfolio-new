@@ -1,0 +1,29 @@
+#capabilities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cap-left h2 {
+    font-size: 76px;
+    color: white;
+}
+.cap-left {
+    align-self: flex-start;
+}
+.cap-right {
+    max-width: 600px;
+}
+.cap-right p {
+    padding-bottom: 2rem;
+}
+.cap-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.capability {
+    border: 1px solid #484848;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+}

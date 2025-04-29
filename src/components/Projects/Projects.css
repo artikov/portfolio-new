@@ -1,0 +1,13 @@
+#projects h2 {
+    font-size: 76px;
+    color: #ffffff;
+    margin: 0;
+}
+#projects p {
+    font-size: 18px;
+}
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}

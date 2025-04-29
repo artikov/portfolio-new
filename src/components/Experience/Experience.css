@@ -1,0 +1,30 @@
+#experience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exp-left h2 {
+    font-size: 76px;
+    color: white;
+}
+.exp-left {
+    align-self: flex-start;
+}
+.exp-right {
+    max-width: 600px;
+}
+
+.info-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-title-container h3 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+.info-company {
+    font-size: 18px;
+    color: #D3E97A;
+}

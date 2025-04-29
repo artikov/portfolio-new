@@ -1,0 +1,33 @@
+.about-left h2 {
+    font-size: 100px;
+    color: white;
+}
+.about-right h3 {
+    font-size: 32px;
+    color: white;
+    margin: 0;
+}
+.about-right {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#about {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    height: 500px;
+}
+.about-left {
+    align-self: baseline;
+}
+.about-right p {
+    font-size: 18px;
+}
+.about-right a {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #D3E97A;
+}
