@@ -3,6 +3,7 @@
 @theme {
 	--color-black: #000;
 	--color-black-100: #000319;
+	--color-purple: #cbacf9;
 }
 
 @theme inline {
