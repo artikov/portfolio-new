@@ -56,7 +56,7 @@ export const BackgroundGradientAnimation = ({
 		document.body.style.setProperty("--pointer-color", pointerColor);
 		document.body.style.setProperty("--size", size);
 		document.body.style.setProperty("--blending-value", blendingValue);
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		function move() {
@@ -71,7 +71,7 @@ export const BackgroundGradientAnimation = ({
 		}
 
 		move();
-	}, [tgX, tgY]);
+	}, [tgX, tgY]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
 		if (interactiveRef.current) {
@@ -114,7 +114,8 @@ export const BackgroundGradientAnimation = ({
 			<div className={cn("", className)}>{children}</div>
 			<div
 				className={cn(
-					"gradients-container h-full w-full blur-lg"
+					"gradients-container h-full w-full blur-lg",
+					isSafari ? "" : ""
 					// isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
 				)}
 			>

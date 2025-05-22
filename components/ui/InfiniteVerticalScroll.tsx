@@ -21,7 +21,7 @@ export const InfiniteMovingCards = ({
 
 	useEffect(() => {
 		addAnimation();
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const [start, setStart] = useState(false);
 
