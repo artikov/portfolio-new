@@ -1,9 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
 import { techStack } from "@/data";
 import { InfiniteMovingCards } from "./InfiniteVerticalScroll";
+import Lottie from "react-lottie";
+import { useState } from "react";
+import animationData from "@/data/confetti.json";
+import { IoCopyOutline } from "react-icons/io5";
+import MagicButton from "./MagicButton";
 
 export const BentoGrid = ({
 	className,
@@ -15,7 +21,7 @@ export const BentoGrid = ({
 	return (
 		<div
 			className={cn(
-				"mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-rows-4  md:grid-cols-3 lg:grid-cols-5 lg:gap-8  md:auto-rows-[18rem]",
+				"mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-rows-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-8 ",
 				className
 			)}
 		>
@@ -43,10 +49,17 @@ export const BentoGridItem = ({
 	spareImg?: string;
 	id?: number;
 }) => {
+	const [copied, setCopied] = useState(false);
+
+	const handleCopy = () => {
+		navigator.clipboard.writeText("artikov.dev@gmail.com");
+		setCopied(true);
+	};
+
 	return (
 		<div
 			className={cn(
-				"group/bento shadow-input row-span-1 overflow-hidden flex flex-col justify-between space-y-4 relative rounded-3xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none ",
+				"group/bento shadow-input row-span-1 overflow-hidden flex flex-col justify-between space-y-4 relative rounded-3xl border border-neutral-200 transition duration-200 hover:shadow-xl dark:border-white/[0.1]  dark:shadow-none ",
 				className
 			)}
 			style={{
@@ -55,7 +68,7 @@ export const BentoGridItem = ({
 					"linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(81, 142, 196, 1) 79%, rgba(6, 22, 54, 1) 100%)",
 			}}
 		>
-			<div className={`${id === 6 && "flex justify-center h-full"}`}>
+			<div className={`${id === 6 && "flex justify-center"} h-full`}>
 				<div className="w-full h-full absolute">
 					{img && (
 						<img
@@ -100,7 +113,6 @@ export const BentoGridItem = ({
 
 					{id === 3 && (
 						<div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-							{/* <InfiniteMovingCards items={techStack} /> */}
 							<InfiniteMovingCards
 								items={techStack}
 								speed="slow"
@@ -123,6 +135,30 @@ export const BentoGridItem = ({
 								))}
 								<span className="py-4  px-3 rounded-lg text-center bg-[#10132e]" />
 							</div> */}
+						</div>
+					)}
+
+					{id === 6 && (
+						<div className="mt-5 relative">
+							<div className={`absolute -bottom-5 right-0`}>
+								<Lottie
+									options={{
+										loop: copied,
+										autoplay: copied,
+										animationData: animationData,
+										rendererSettings: {
+											preserveAspectRatio: "xMidYMid slice",
+										},
+									}}
+								/>
+							</div>
+							<MagicButton
+								title={copied ? "Email Copied!" : "Copy Email"}
+								icon={<IoCopyOutline />}
+								position="left"
+								otherClasses="!bg-[#161a31]"
+								handleClick={handleCopy}
+							/>
 						</div>
 					)}
 				</div>
