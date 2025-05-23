@@ -1,17 +1,22 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
-export const InfiniteVerticalCards = ({
+export const InfiniteMovingCards = ({
 	items,
-	direction = "up",
+	direction = "left",
 	speed = "fast",
 	pauseOnHover = true,
 	className,
 }: {
-	items: string[];
-	direction?: "up" | "down";
+	items: {
+		quote: string;
+		name: string;
+		title: string;
+	}[];
+	direction?: "left" | "right";
 	speed?: "fast" | "normal" | "slow";
 	pauseOnHover?: boolean;
 	className?: string;
@@ -22,9 +27,7 @@ export const InfiniteVerticalCards = ({
 	useEffect(() => {
 		addAnimation();
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
-
 	const [start, setStart] = useState(false);
-
 	function addAnimation() {
 		if (containerRef.current && scrollerRef.current) {
 			const scrollerContent = Array.from(scrollerRef.current.children);
@@ -41,10 +44,9 @@ export const InfiniteVerticalCards = ({
 			setStart(true);
 		}
 	}
-
 	const getDirection = () => {
 		if (containerRef.current) {
-			if (direction === "up") {
+			if (direction === "left") {
 				containerRef.current.style.setProperty(
 					"--animation-direction",
 					"forwards"
@@ -57,7 +59,6 @@ export const InfiniteVerticalCards = ({
 			}
 		}
 	};
-
 	const getSpeed = () => {
 		if (containerRef.current) {
 			if (speed === "fast") {
@@ -69,30 +70,56 @@ export const InfiniteVerticalCards = ({
 			}
 		}
 	};
-
 	return (
 		<div
 			ref={containerRef}
 			className={cn(
-				"vertical-scroller relative z-0 h-[600px] overflow-hidden",
+				"scroller relative z-20 w-[80vw] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
 				className
 			)}
 		>
 			<ul
 				ref={scrollerRef}
 				className={cn(
-					direction === "down" ? "flex-col-reverse" : "flex-col",
-					"flex gap-3 lg:gap-8",
-					start && "animate-vertical-scroll",
+					"flex w-max min-w-full shrink-0 flex-nowrap gap-16 py-4",
+					start && "animate-scroll",
 					pauseOnHover && "hover:[animation-play-state:paused]"
 				)}
 			>
 				{items.map((item, idx) => (
 					<li
-						className="py-2 lg:py-2  px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]"
+						className="relative w-[70vw] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] p-5 md:p-16 md:w-[40vw] dark:border-zinc-800 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
 						key={idx}
+						style={{
+							background: "rgb(4,7,29)",
+							backgroundColor:
+								"linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(81, 142, 196, 1) 79%, rgba(6, 22, 54, 1) 100%)",
+						}}
 					>
-						<span className="relative z-10">{item}</span>
+						<blockquote>
+							<div
+								aria-hidden="true"
+								className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+							></div>
+							<span className="relative z-20 text-sm md:text-lg leading-[1.6] font-normal text-neutral-800  dark:text-white">
+								{item.quote}
+							</span>
+							<div className="relative z-20 mt-6 flex flex-row items-center">
+								<span className="flex flex-col gap-1">
+									<div className="me-3">
+										<img src="/profile.svg" alt="Profile" />
+									</div>
+									<div className="flex flex-col gap-1">
+										<span className="text-xl leading-[1.6] font-bold text-neutral-500 dark:text-white">
+											{item.name}
+										</span>
+										<span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-white-200">
+											{item.title}
+										</span>
+									</div>
+								</span>
+							</div>
+						</blockquote>
 					</li>
 				))}
 			</ul>

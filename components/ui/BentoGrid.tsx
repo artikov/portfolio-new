@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
 import { techStack } from "@/data";
-import { InfiniteMovingCards } from "./InfiniteVerticalScroll";
+import { InfiniteVerticalCards } from "./InfiniteVerticalScroll";
 import Lottie from "react-lottie";
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
@@ -113,28 +113,17 @@ export const BentoGridItem = ({
 
 					{id === 3 && (
 						<div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-							<InfiniteMovingCards
+							<InfiniteVerticalCards
 								items={techStack}
 								speed="slow"
 								pauseOnHover={true}
 							/>
-							<InfiniteMovingCards
+							<InfiniteVerticalCards
 								items={techStack}
 								direction="down"
 								speed="slow"
 								pauseOnHover={true}
 							/>
-							{/* <div className="flex flex-col gap-3 lg:gap-8">
-								{techStack.map((item) => (
-									<span
-										key={item}
-										className="py-2 lg:py-2  px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]"
-									>
-										{item}
-									</span>
-								))}
-								<span className="py-4  px-3 rounded-lg text-center bg-[#10132e]" />
-							</div> */}
 						</div>
 					)}
 
