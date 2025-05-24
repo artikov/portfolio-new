@@ -77,6 +77,9 @@ export const BentoGridItem = ({
 							className={cn(imgClassName, "object-cover object-center")}
 						/>
 					)}
+					{id === 1 && (
+						<div className="absolute bottom-0 w-full lg:h-[232px] lg:bg-[#04071d] z-0" />
+					)}
 				</div>
 				<div
 					className={`absolute right-0 -bottom-5 ${
@@ -99,14 +102,30 @@ export const BentoGridItem = ({
 				<div
 					className={cn(
 						titleClassName,
-						"group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+						"group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col ",
+						id !== 1 ? "px-5 p-5 lg:p-10" : ""
 					)}
 				>
-					<div className="font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base z-10">
+					<div
+						className={`font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base z-10  ${
+							id === 3 ? "md:!max-w-50" : ""
+						}`}
+					>
 						{description}
 					</div>
-					<div className="font-sans font-bold text-lg text-neutral-600 dark:text-neutral-200 lg:text-3xl max-w-96 z-10">
-						{title}
+					<div className="relative z-10 mt-2">
+						{id === 1 && (
+							<div className="absolute inset-0 w-full h-full lg:bg-[#04071d] -z-10 rounded" />
+						)}
+						<div
+							className={`font-sans font-bold text-lg text-neutral-600 dark:text-neutral-200 lg:text-3xl ${
+								id === 1
+									? "lg:p-10 lg:py-20 p-5 lg:max-w-max max-w-96"
+									: "max-w-96"
+							} ${id === 3 ? "lg:!max-w-40" : ""}`}
+						>
+							{title}
+						</div>
 					</div>
 
 					{id === 2 && <GlobeDemo />}
@@ -147,6 +166,7 @@ export const BentoGridItem = ({
 								position="left"
 								otherClasses="!bg-[#161a31]"
 								handleClick={handleCopy}
+								type="dark"
 							/>
 						</div>
 					)}
