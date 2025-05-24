@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
 	{
 		id: 1,
-		title: "I prioritize client collaboration, fostering open communication ",
+		title: "Collaboration First — Built Around Clear, Open Communication",
 		description: "",
 		className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
 		imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
 	},
 	{
 		id: 2,
-		title: "I'm very flexible with time zone communications",
+		title: "Global-Friendly — Flexible to Match Your Time Zone",
 		description: "",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
 		imgClassName: "",
@@ -28,8 +28,8 @@ export const gridItems = [
 	},
 	{
 		id: 3,
-		title: "My tech stack",
-		description: "I constantly try to improve",
+		title: "Relentlessly Evolving",
+		description: "Always Learning, Always Adapting",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-2",
 		imgClassName: "",
 		titleClassName: "justify-center",
@@ -38,7 +38,7 @@ export const gridItems = [
 	},
 	{
 		id: 4,
-		title: "Tech enthusiast with a passion for development.",
+		title: "Driven by Code, Fueled by Passion for Smart Development",
 		description: "",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
 		imgClassName: "",
@@ -49,8 +49,8 @@ export const gridItems = [
 
 	{
 		id: 5,
-		title: "Currently building a JS Animation library",
-		description: "The Inside Scoop",
+		title: "Building a Custom JavaScript Animation Library",
+		description: "Under the Hood",
 		className: "md:col-span-3 md:row-span-2",
 		imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
 		titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,7 +59,8 @@ export const gridItems = [
 	},
 	{
 		id: 6,
-		title: "Do you want to start a project together?",
+		title:
+			"Let’s Build Something Exceptional — Reach Out to Start Your Project",
 		description: "",
 		className: "lg:col-span-2 md:col-span-3 md:row-span-1",
 		imgClassName: "",
@@ -173,29 +174,29 @@ export const companies = [
 export const workExperience = [
 	{
 		id: 1,
-		title: "Frontend Engineer Intern",
-		desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+		title: "Over 3 Years of Development Experience",
+		desc: "Frontend & full-stack expertise delivering user-focused, high-performance applications.",
 		className: "md:col-span-2",
 		thumbnail: "/exp1.svg",
 	},
 	{
 		id: 2,
-		title: "Mobile App Dev - JSM Tech",
-		desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-		className: "md:col-span-2", // change to md:col-span-2
+		title: "20+ Successful Client Projects",
+		desc: "Projects delivered across SaaS, eCommerce, and business websites — built for results.",
+		className: "md:col-span-2",
 		thumbnail: "/exp2.svg",
 	},
 	{
 		id: 3,
-		title: "Freelance App Dev Project",
-		desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-		className: "md:col-span-2", // change to md:col-span-2
+		title: "Modern Tech Stack Proficiency",
+		desc: "Experienced with React, Next.js, Node.js, MongoDB, Tailwind, and scalable web technologies.",
+		className: "md:col-span-2",
 		thumbnail: "/exp3.svg",
 	},
 	{
 		id: 4,
-		title: "Lead Frontend Developer",
-		desc: "Developed and maintained user-facing features using modern frontend technologies.",
+		title: "Scalable, High-Performance Solutions",
+		desc: "Proven ability to build clean, efficient, and scalable digital products for real-world needs.",
 		className: "md:col-span-2",
 		thumbnail: "/exp4.svg",
 	},

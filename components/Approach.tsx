@@ -8,13 +8,13 @@ export default function Approach() {
 	return (
 		<section className="w-full py-20">
 			<h1 className="heading">
-				My <span className="text-purple">Approach</span>
+				Our <span className="text-purple">Process</span>
 			</h1>
 			<div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
 				<Card
 					title="Planning & Strategy"
 					icon={<AceternityIcon order="Phase 1" />}
-					description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+					description="Once we align on your vision, we define a roadmap — from initial wireframes to technical architecture. Expect clear milestones and regular updates throughout the journey."
 				>
 					<CanvasRevealEffect
 						animationSpeed={5.1}
@@ -22,9 +22,9 @@ export default function Approach() {
 					/>
 				</Card>
 				<Card
-					title="Development & Progress Update"
+					title="Design & Development"
 					icon={<AceternityIcon order="Phase 2" />}
-					description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+					description="We bring ideas to life with clean, scalable code and modern UI design. Our team builds responsive, high-performing solutions with precision and care."
 				>
 					<CanvasRevealEffect
 						animationSpeed={3}
@@ -37,9 +37,9 @@ export default function Approach() {
 					/>
 				</Card>
 				<Card
-					title="Development & Launch"
+					title="Launch & Support"
 					icon={<AceternityIcon order="Phase 3" />}
-					description="Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+					description="After rigorous testing, we go live — but our work doesn't stop there. We provide post-launch support, ensuring stability, optimization, and room for growth."
 				>
 					<CanvasRevealEffect
 						animationSpeed={3}

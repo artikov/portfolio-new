@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* 🎨 Theme Variables */
 @theme {
 	--color-black: #000;
-	--color-black-100: #000319;
-	--color-purple: #cbacf9;
+	--color-black-100: #000212;
+	--color-purple: #7b61ff;
 }
 
 /* ✨ Spotlight Animation */

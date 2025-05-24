@@ -17,16 +17,16 @@ const Footer = () => {
 			</div>
 			<div className="flex flex-col items-center">
 				<h1 className="heading lg:max-w-[45vw]">
-					Ready to take <span className="text-purple">your</span> digital
-					presence to the next level?
+					Ready to elevate <span className="text-purple">your business</span>{" "}
+					with a high-impact website?
 				</h1>
 				<p className="text-white-200 md:mt-10 my-5 text-center">
-					Reach out to me today and let&apos;s discuss how I can help you
-					achieve your goals.
+					Let&apos;s collaborate to craft a digital experience that drives
+					growth, builds trust, and delivers results.
 				</p>
 				<a href="mailto:artikov.dev@gmail.com">
 					<MagicButton
-						title="Get in touch"
+						title="Let's Talk"
 						icon={<FaLocationArrow />}
 						position="right"
 					/>
@@ -34,7 +34,7 @@ const Footer = () => {
 			</div>
 			<div className="flex mt-16 md:flex-row flex-col justify-between items-center">
 				<p className="md:text-base text-sm md:font-normal font-light">
-					Copyright &copy; {currentYear} Oybek Artikov
+					Copyright &copy; {currentYear} <strong>Artikov Tech</strong>
 				</p>
 				<div className="flex items-center md:gap-3 gap-6">
 					{socialMedia.map(({ id, img }) => (
